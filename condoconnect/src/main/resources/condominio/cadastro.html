@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Condo Connect - Cadastre seu Condomínio</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#16a34a",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922"
+                    },
+                    fontFamily: { display: ["Manrope", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-scale {
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            opacity: 0.8;
+            transform: scale(0.92);
+            display: inline-block;
+        }
+        .fade-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light">
+    <div class="flex min-h-screen w-full items-center justify-center p-4">
+        <div class="w-full max-w-6xl">
+            <div class="grid w-full grid-cols-1 overflow-hidden rounded-xl bg-white shadow-lg md:grid-cols-2">
+
+                <div class="relative hidden flex-col justify-between bg-green-600 p-8 text-white md:flex">
+                    <div class="z-10">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-4xl">apartment</span>
+                            <h2 class="text-2xl font-bold">Condo Connect</h2>
+                        </div>
+                        <p class="mt-4 text-lg leading-relaxed text-green-100">
+                            Área exclusiva — Cadastro de <strong>Condomínio</strong>.
+                        </p>
+                    </div>
+                    <div class="relative z-10 flex h-full w-full items-center justify-center">
+                        <img alt="" class="absolute inset-0 h-full w-full object-cover opacity-10"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdOQ-udk4JOVAjZxDk99vq-VEE372ou2jsTJC9QtQMlysDu7pfexrPr7wy5KSZ-S9u5HOfIhyAB7mPonYMz5GszNab0L2V9x0AnIKci6lG8OLIqBA--WMzkwuULEj-EovhqyMQLgjjMZ4jAzZuvrc_s6SuWTcA77gUmbt6JHPwuSm7dIwSvWLcQIun41gY3EtvoShuARviESHI7Blzo8eIAJee8nrglqwIFzztMjpxDYueJYlS7QbfhsLNt28_5heLNRM0CZlA5nS7" />
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center p-6 sm:p-10">
+                    <h1 class="text-2xl font-bold text-slate-800 sm:text-3xl">Cadastre seu Condomínio</h1>
+                    <p class="pb-6 pt-1 text-base text-slate-500">Bem-vindo! Preencha os campos abaixo.</p>
+
+                    <form id="registro-form" class="flex flex-col gap-4" onsubmit="return false">
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div class="flex flex-col sm:col-span-2">
+                                <label class="pb-2 text-sm font-medium text-slate-800">Nome do Condomínio</label>
+                                <input id="reg-nome" type="text" required class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="pb-2 text-sm font-medium text-slate-800">CNPJ</label>
+                                <input id="reg-cnpj" type="text" maxlength="18" placeholder="00.000.000/0000-00" class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="pb-2 text-sm font-medium text-slate-800">Telefone</label>
+                                <input id="reg-tel" type="text" maxlength="15" placeholder="(11) 91234-5678" class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="pb-2 text-sm font-medium text-slate-800">E-mail do Administrador</label>
+                                <input id="reg-email" type="email" placeholder="voce@exemplo.com" class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm" />
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:col-span-2">
+                                <div class="flex flex-col">
+                                    <label class="pb-2 text-sm font-medium text-slate-800">Senha</label>
+                                    <div class="relative">
+                                        <input id="reg-senha" type="password" required placeholder="6+ caracteres" class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 pr-10 text-sm" />
+                                        <button id="togglePassword" type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700">
+                                            <span id="iconPassword" class="material-symbols-outlined text-xl fade-scale active">visibility</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="pb-2 text-sm font-medium text-slate-800">Confirmar Senha</label>
+                                    <div class="relative">
+                                        <input id="reg-confirmar-senha" type="password" required placeholder="Confirme a senha" class="form-input h-12 w-full rounded-lg border border-slate-300 bg-white p-3 pr-10 text-sm" />
+                                        <button id="toggleConfirmPassword" type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700">
+                                            <span id="iconConfirmPassword" class="material-symbols-outlined text-xl fade-scale active">visibility</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-200 pt-6">
+                            <h2 class="text-[#111418] text-lg font-bold">Endereço do Condomínio</h2>
+                            <div class="mt-4 grid grid-cols-6 gap-x-4 gap-y-4">
+                                <div class="col-span-6 sm:col-span-2">
+                                    <label class="text-sm pb-2 block">CEP</label>
+                                    <input id="reg-cep" maxlength="9" placeholder="00000-000" class="form-input w-full rounded-lg border border-slate-300 bg-white p-3 h-12" />
+                                </div>
+                                <div class="col-span-4">
+                                    <label class="text-sm pb-2 block">Rua</label>
+                                    <input id="reg-rua" type="text" readonly class="form-input w-full rounded-lg border border-slate-300 bg-gray-100 p-3 h-12" />
+                                </div>
+                                <div class="col-span-4">
+                                    <label class="text-sm pb-2 block">Bairro</label>
+                                    <input id="reg-bairro" type="text" readonly class="form-input w-full rounded-lg border border-slate-300 bg-gray-100 p-3 h-12" />
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="text-sm pb-2 block">Número</label>
+                                    <input id="reg-numero" type="text" class="form-input w-full rounded-lg border border-slate-300 bg-white p-3 h-12" />
+                                </div>
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label class="text-sm pb-2 block">Cidade</label>
+                                    <input id="reg-cidade" type="text" readonly class="form-input w-full rounded-lg border border-slate-300 bg-gray-100 p-3 h-12" />
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label class="text-sm pb-2 block">Estado</label>
+                                    <input id="reg-estado" type="text" readonly class="form-input w-full rounded-lg border border-slate-300 bg-gray-100 p-3 h-12" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <a href="../pagInicial/selecaoCadastro.html" class="flex items-center gap-2 text-sm font-medium text-green-600 hover:text-green-700">
+                                <span class="material-symbols-outlined text-base">arrow_back</span>
+                                Não é admin de um condomínio? Voltar
+                            </a>
+                        </div>
+
+                        <div class="pt-6">
+                            <button type="submit" class="flex h-12 w-full items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-sm hover:bg-green-700">
+                                Registrar
+                            </button>
+                        </div>
+                    </form>
+                    <p class="mt-6 text-center text-sm text-slate-500">
+                        Já tem uma conta? <a href="../pagInicial/login.html" class="font-medium text-primary">Faça login aqui</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="erro-modal" class="fixed inset-0 z-50 items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black/50" id="erro-modal-backdrop"></div>
+        <div class="relative mx-4 max-w-md rounded-xl bg-white p-6 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+                <span id="modal-icon" class="material-symbols-outlined text-3xl text-red-600">error_outline</span>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-800">Atenção</h3>
+            </div>
+            <ul id="erro-list" class="space-y-2 text-sm text-slate-700 list-disc list-inside max-h-64 overflow-y-auto"></ul>
+            <button id="erro-modal-close" class="mt-6 w-full rounded-lg bg-primary py-3 font-bold text-white hover:bg-green-700">
+                Entendi
+            </button>
+        </div>
+    </div>
+
+    <script src="cadastroCondominio.js"></script>
+</body>
+</html>

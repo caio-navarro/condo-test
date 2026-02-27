@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "background": "#F3F4F6",
+                        "surface": "#FFFFFF",
+                        "text-primary": "#1F2937",
+                        "text-secondary": "#6B7280",
+                        "border-color": "#E5E7EB"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-display text-text-primary">
+    <div class="flex min-h-screen flex-col justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="flex justify-center items-center gap-3">
+                <div class="bg-primary flex h-12 w-12 items-center justify-center rounded-xl">
+                    <span class="material-symbols-outlined text-3xl text-white">apartment</span>
+                </div>
+                <h1 class="text-3xl font-bold text-text-primary">Condo Connect</h1>
+            </div>
+            <h2 class="mt-6 text-center text-lg text-text-secondary">
+                Bem-vindo de volta! Faça login na sua conta.
+            </h2>
+        </div>
+
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="rounded-xl border border-border-color bg-surface py-8 px-4 shadow-sm sm:px-10">
+
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary" for="email">Email</label>
+                        <div class="mt-1">
+                            <input autocomplete="email"
+                                class="block w-full h-12 appearance-none rounded-lg border border-border-color px-3 py-2 placeholder-gray-400 shadow-sm focus:border-primary focus:outline-none focus:ring-primary sm:text-sm"
+                                id="login-email" name="email" placeholder="seu@email.com" required="" type="email" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary" for="password">Senha</label>
+                        <div class="mt-1">
+                            <input autocomplete="current-password"
+                                class="block w-full h-12 appearance-none rounded-lg border border-border-color px-3 py-2 placeholder-gray-400 shadow-sm focus:border-primary focus:outline-none focus:ring-primary sm:text-sm"
+                                id="login-senha" name="password" placeholder="Sua senha" required="" type="password" />
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end">
+                        <a class="text-sm font-medium text-primary hover:text-primary/80" href="#">
+                            Esqueceu sua senha?
+                        </a>
+                    </div>
+
+                    <div>
+                        <button
+                            class="flex w-full justify-center rounded-lg border border-transparent bg-primary py-3 px-4 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                            type="submit">
+                            Entrar
+                        </button>
+                    </div>
+                </form>
+
+                <!-- TEXTO CADASTRE-SE -->
+                <p class="mt-6 text-center text-sm text-text-secondary">
+                    Não tem uma conta?
+                    <a href="selecaoCadastro.html"
+                        class="text-primary font-semibold hover:text-primary/80">Cadastre-se</a>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <p class="text-center text-sm text-text-secondary">
+                © 2025 Condo Connect. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

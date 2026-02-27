@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Gerador de Código</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24 !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+    </script>
+</head>
+
+<body class="font-display">
+    <div class="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark overflow-x-hidden">
+
+        <!-- SIDEBAR MOBILE -->
+        <aside id="sidebar"
+            class="fixed top-0 left-0 z-40 w-64 h-screen bg-white dark:bg-slate-900 p-4 flex flex-col justify-between
+            border-r border-slate-200 dark:border-slate-800 lg:hidden transform -translate-x-full transition-transform duration-300 ease-in-out">
+
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-cover rounded-full size-10"
+                            style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCia8iPo1TVVAoQfYubn2l_-AafIBVrorazeVdzT63h0_rVyEd_-GkUSciYQly3b6gSzgonpAFduwC7iL0o3jHrSzwlhT2YZxJMkDTmSNSmPEYWq5j3Qf_B_ZsIaLvZVUvN7XqkH1cISAnXEyA-S0maSHcCIdTOzhEQWGhk3-W2ONhjxCH6p4fdpfzgELVXmcIlROAXQoyzDCTjUMQCRzH2akMz7d14DK_uJQbKlos5VCDyColbDcmyz7BsnugGh_VZasPA3Q-WiblX");'>
+                        </div>
+                        <div>
+                            <h1 class="text-slate-900 dark:text-slate-200 text-base font-medium">Admin</h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Condo Connect</p>
+                        </div>
+                    </div>
+                    <button class="p-2 -mr-2 text-slate-500 dark:text-slate-400" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+
+                <!-- NAV MOBILE -->
+                <nav class="flex flex-col gap-2 mt-4">
+
+                    <!-- Dashboard NORMAL -->
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 
+                        hover:bg-slate-100 dark:hover:bg-slate-800" href="dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-medium">Dashboard</p>
+                    </a>
+
+                    <!-- Síndicos -->
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300
+                        hover:bg-slate-100 dark:hover:bg-slate-800" href="aprovarSindicos.html">
+                        <span class="material-symbols-outlined">shield_person</span>
+                        <p class="text-sm font-medium">Síndicos</p>
+                    </a>
+
+                    <!-- Ocorrências -->
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300
+                        hover:bg-slate-100 dark:hover:bg-slate-800" href="ocorrencias.html">
+                        <span class="material-symbols-outlined">report</span>
+                        <p class="text-sm font-medium">Ocorrências</p>
+                    </a>
+
+                    <!-- Avisos -->
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300
+                        hover:bg-slate-100 dark:hover:bg-slate-800" href="comunicados.html">
+                        <span class="material-symbols-outlined">campaign</span>
+                        <p class="text-sm font-medium">Comunicados</p>
+                    </a>
+
+                    <!-- CÓDIGOS (ATIVO) -->
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary 
+                        dark:bg-primary/20" href="geradorCodigo.html">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL'1;">
+                            key</span>
+                        <p class="text-sm font-medium">Códigos</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300
+                        hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+                        <span class="material-symbols-outlined">credit_card</span>
+                        <p class="text-sm font-medium">Assinatura</p>
+                    </a>
+                </nav>
+            </div>
+
+            <div>
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300
+                    hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium">Sair</p>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Overlay mobile -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden" onclick="toggleMobileMenu()">
+        </div>
+
+        <!-- LAYOUT PRINCIPAL -->
+        <div class="flex flex-row min-h-screen w-full">
+
+            <!-- SIDEBAR DESKTOP -->
+            <aside class="w-64 flex-col justify-between bg-white dark:bg-background-dark p-4 
+                border-r border-slate-200 dark:border-slate-800 hidden lg:flex shrink-0">
+
+                <div class="flex flex-col gap-4">
+
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-cover rounded-full size-10"
+                            style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCia8iPo1TVVAoQfYubn2l_-AafIBVrorazeVdzT63h0_rVyEd_-GkUSciYQly3b6gSzgonpAFduwC7iL0o3jHrSzwlhT2YZxJMkDTmSNSmPEYWq5j3Qf_B_ZsIaLvZVUvN7XqkH1cISAnXEyA-S0maSHcCIdTOzhEQWGhk3-W2ONhjxCH6p4fdpfzgELVXmcIlROAXQoyzDCTjUMQCRzH2akMz7d14DK_uJQbKlos5VCDyColbDcmyz7BsnugGh_VZasPA3Q-WiblX");'>
+                        </div>
+                        <div>
+                            <h1 class="text-slate-900 dark:text-slate-200 text-base font-medium">Admin</h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Condo Connect</p>
+                        </div>
+                    </div>
+
+                    <nav class="flex flex-col gap-2 mt-4">
+
+                        <!-- Dashboard NORMAL -->
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                            text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-medium">Dashboard</p>
+                        </a>
+
+                        <!-- Síndicos -->
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                            text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="aprovarSindicos.html">
+                            <span class="material-symbols-outlined">shield_person</span>
+                            <p class="text-sm font-medium">Síndicos</p>
+                        </a>
+
+                        <!-- Ocorrências -->
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                            text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="ocorrencias.html">
+                            <span class="material-symbols-outlined">report</span>
+                            <p class="text-sm font-medium">Ocorrências</p>
+                        </a>
+
+                        <!-- Avisos -->
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                            text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="comunicados.html">
+                            <span class="material-symbols-outlined">campaign</span>
+                            <p class="text-sm font-medium">Comunicados</p>
+                        </a>
+
+                        <!-- CÓDIGOS (ATIVO) -->
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary 
+                            dark:bg-primary/20" href="geradorCodigo.html">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings:'FILL'1;">key</span>
+                            <p class="text-sm font-medium">Códigos</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                            text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="assinatura.html">
+                            <span class="material-symbols-outlined">credit_card</span>
+                            <p class="text-sm font-medium">Assinatura</p>
+                        </a>
+
+                    </nav>
+                </div>
+
+                <!-- Sair -->
+                <div>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg 
+                        text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium">Sair</p>
+                    </a>
+                </div>
+
+            </aside>
+
+            <!-- CONTEÚDO -->
+            <div class="flex flex-1 flex-col">
+
+                <!-- Header -->
+                <header
+                    class="flex items-center justify-between h-16 px-4 sm:px-6 border-b border-gray-200 dark:border-gray-800 lg:border-none">
+
+                    <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 lg:hidden"
+                        onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+
+                    <div class="flex items-center gap-2 lg:hidden">
+                        <div class="bg-center bg-cover rounded-full size-8"
+                            style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtr-InIiuxU4UABlnOOu5KUPKRyRfxVgUmVevoXYmwKNpDJ7cwEUq7qiz-h7kMv8IyY_zieoLgMpOPfh6dTaqUmLlAwP71aDmbOqWOMDvL_wVqfEChiB1IOqoOa_E38GlTXnv_6g15wBmeV1kH2G1xIeXP1DGyjdXm56XZ0G18AE0yzaFvgk6OPigeYg-hJNSuu2lhmCMerE7yaMYddmlobuNRQV4sw2dvCM2TqtsTDFZbGB0JgHYzecfpzMR5DQSUhBzgd3oXOh9t");'>
+                        </div>
+                        <h1 class="text-gray-900 dark:text-white text-base font-bold">Condo Connect</h1>
+                    </div>
+
+                    <div class="w-8 lg:hidden"></div>
+                </header>
+
+                <!-- MAIN -->
+                <main class="flex-1 p-4 sm:p-6 md:p-8 flex items-center justify-center">
+                    <div class="w-full max-w-2xl mx-auto flex flex-col gap-6 sm:gap-8 text-center items-center">
+
+                        <div class="flex flex-col gap-2">
+                            <h1
+                                class="text-gray-900 dark:text-white text-3xl sm:text-4xl font-extrabold tracking-tight">
+                                Gerador de Código</h1>
+                            <p class="text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-lg leading-relaxed">
+                                Gere um novo código de acesso seguro para moradores ou visitantes.
+                            </p>
+                        </div>
+
+                        <div
+                            class="w-full p-6 md:p-8 rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-800 flex flex-col items-center gap-6 sm:gap-8">
+
+                            <div
+                                class="w-full flex items-center justify-center h-24 sm:h-28 bg-gray-100 dark:bg-background-dark rounded-lg px-2 sm:px-4">
+                                <p
+                                    class="font-mono text-4xl sm:text-5xl md:text-6xl tracking-[0.15em] sm:tracking-[0.2em] text-gray-800 dark:text-gray-200 font-semibold">
+
+                                </p>
+                            </div>
+
+                            <div class="w-full flex flex-col sm:flex-row items-center gap-4">
+
+                                <!-- BOTÃO AZUL (CORRIGIDO) -->
+                                <button
+                                    class="flex w-full sm:flex-1 cursor-pointer items-center justify-center rounded-lg h-12 px-6 
+                                        bg-primary hover:bg-blue-600 text-white gap-2 text-base font-bold shadow-lg shadow-primary/20 transition">
+                                    <span class="material-symbols-outlined text-2xl"
+                                        style="font-variation-settings:'wght'600;">autorenew</span>
+                                    <span>Gerar Novo Código</span>
+                                </button>
+
+                                <!-- Copiar -->
+                                <button class="flex w-full sm:w-auto cursor-pointer items-center justify-center rounded-lg h-12 px-6 
+                                        bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 
+                                        text-gray-800 dark:text-gray-200 gap-2 text-base font-bold transition">
+                                    <span class="material-symbols-outlined text-2xl"
+                                        style="font-variation-settings:'wght'500;">content_copy</span>
+                                    <span>Copiar</span>
+                                </button>
+                            </div>
+
+                            <p class="text-sm text-gray-500 dark:text-gray-400 max-w-md">
+                                O código é de uso exclusivo para moradores e síndicos. Compartilhe com segurança.
+                            </p>
+
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="geradorCodigo.js"></script>
+
+</body>
+
+</html>

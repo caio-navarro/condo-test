@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Comunicados</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#138aec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111518] dark:text-gray-200">
+    <div x-data="comunicadosApp">
+
+        <div class="flex flex-1">
+            <div @keydown.window.escape="open = false" class="lg:hidden" x-show="open">
+                <aside :class="open ? 'translate-x-0' : '-translate-x-full'"
+                    class="fixed inset-y-0 left-0 z-50 flex w-64 transform flex-col border-r border-gray-200 bg-white p-4 transition-transform duration-300 ease-in-out dark:border-gray-800 dark:bg-background-dark">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="aspect-square size-10 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                                data-alt="Condo Connect logo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBS7rJiN_rJDs2Qr2ufgyfMo6cQ2YFhs6U_2OIZLn5MkTY8TMawoI1LCQKxITysegYTAz0DKXBT7jlKixSXDh2UGEdyB3j1YNWV8yPIvY1FB4pM1swPZW76D2Si36eMzAqU3dJd-OC7hYbwdSjS78gWGY097JPPmdHtnQR1pACoaVEJi3I3_6sN0N0tyrN4deoEAPwvZzOZQ73NNFMi5QCuuNBWowWwjisaTCS16yYa0DxAfBwq_bFlbzmquhXYNsDVwrCzXUczmV-2");'>
+                            </div>
+                            <div class="flex flex-col">
+                                <h1 class="text-base font-bold leading-normal text-[#111518] dark:text-white">José Alves
+                                </h1>
+                                <p class="text-sm font-normal leading-normal text-[#617789] dark:text-gray-400">
+                                    Condominio Vila das Flores</p>
+                            </div>
+                        </div>
+                        <button @click="open = false" class="p-2">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <nav class="mt-8 flex flex-1 flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                            href="dashboard.html">
+                            <span class="material-symbols-outlined !text-2xl">dashboard</span>
+                            <p class="text-sm font-medium leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                            href="aprovarMoradores.html">
+                            <span class="material-symbols-outlined !text-2xl">groups</span>
+                            <p class="text-sm font-medium leading-normal">Moradores</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                            href="ocorrencias.html">
+                            <span class="material-symbols-outlined !text-2xl">warning</span>
+                            <p class="text-sm font-medium leading-normal">Ocorrências</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+                            <span class="material-symbols-outlined !text-2xl"
+                                style="font-variation-settings: 'FILL' 1;">campaign</span>
+                            <p class="text-sm font-medium leading-normal">Comunicados</p>
+                        </a>
+                    </nav>
+                    <div class="mt-auto flex flex-col gap-1">
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                            href="#">
+                            <span class="material-symbols-outlined !text-2xl">logout</span>
+                            <p class="text-sm font-medium leading-normal">Sair</p>
+                        </a>
+                    </div>
+                </aside>
+                <div @click="open = false" class="fixed inset-0 z-40 bg-black/30 lg:hidden" x-show="open"
+                    x-transition:enter="transition-opacity ease-linear duration-300"
+                    x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0"
+                    x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-end="opacity-0"
+                    x-transition:leave-start="opacity-100"></div>
+            </div>
+            <aside
+                class="sticky top-0 hidden h-screen w-64 flex-col border-r border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-background-dark lg:flex">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="aspect-square size-10 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="Condo Connect logo"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBS7rJiN_rJDs2Qr2ufgyfMo6cQ2YFhs6U_2OIZLn5MkTY8TMawoI1LCQKxITysegYTAz0DKXBT7jlKixSXDh2UGEdyB3j1YNWV8yPIvY1FB4pM1swPZW76D2Si36eMzAqU3dJd-OC7hYbwdSjS78gWGY097JPPmdHtnQR1pACoaVEJi3I3_6sN0N0tyrN4deoEAPwvZzOZQ73NNFMi5QCuuNBWowWwjisaTCS16yYa0DxAfBwq_bFlbzmquhXYNsDVwrCzXUczmV-2");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-base font-bold leading-normal text-[#111518] dark:text-white">José Alves
+                            </h1>
+                            <p class="text-sm font-normal leading-normal text-[#617789] dark:text-gray-400">Condomínio
+                                Vila das Flores</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="mt-8 flex flex-1 flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                        href="dashboard.html">
+                        <span class="material-symbols-outlined !text-2xl">dashboard</span>
+                        <p class="text-sm font-medium leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                        href="aprovarMoradores.html">
+                        <span class="material-symbols-outlined !text-2xl">groups</span>
+                        <p class="text-sm font-medium leading-normal">Moradores</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                        href="ocorrencias.html">
+                        <span class="material-symbols-outlined !text-2xl">warning</span>
+                        <p class="text-sm font-medium leading-normal">Ocorrências</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+                        <span class="material-symbols-outlined !text-2xl"
+                            style="font-variation-settings: 'FILL' 1;">campaign</span>
+                        <p class="text-sm font-medium leading-normal">Comunicados</p>
+                    </a>
+                </nav>
+                <div class="mt-auto flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">logout</span>
+                        <p class="text-sm font-medium leading-normal">Sair</p>
+                    </a>
+                </div>
+            </aside>
+            <main class="flex flex-1 flex-col">
+                <header
+                    class="sticky top-0 z-30 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-background-dark sm:px-6 lg:px-10">
+                    <div class="flex items-center gap-4 text-[#111518] dark:text-white">
+                        <button @click="open = !open" class="-ml-2 p-2 lg:hidden">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                        <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-[#111518] dark:text-white">
+                            Comunicados</h2>
+                    </div>
+                </header>
+                <div class="flex-1 p-4 sm:p-6 lg:p-10">
+                    <div class="mx-auto max-w-7xl">
+                        <div class="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                            <div class="flex flex-col">
+                                <p
+                                    class="text-3xl font-black leading-tight tracking-[-0.033em] text-[#111518] dark:text-white md:text-4xl">
+                                    Comunicados</p>
+                                <p class="mt-1 text-base font-normal leading-normal text-[#617789] dark:text-gray-400">
+                                    Gerencie os comunicados do condomínio.</p>
+                            </div>
+                            <div class="w-full sm:w-auto">
+                                <button @click="showModal = true"
+                                    class="flex h-12 w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-5 pl-4 text-base font-bold leading-normal tracking-[0.015em] text-white hover:bg-primary/90 sm:w-auto">
+                                    <span class="material-symbols-outlined !text-2xl">add</span>
+                                    <span class="truncate">Novo Comunicado</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <template x-for="comunicado in comunicados" :key="comunicado.id">
+                                <div
+                                    class="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-background-dark/50">
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <h3 class="text-xl font-bold text-[#111518] dark:text-white"
+                                                    x-text="comunicado.titulo"></h3>
+                                                <span x-show="comunicado.urgente"
+                                                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1 text-xs font-medium text-red-800 dark:bg-red-900/30 dark:text-red-300">
+                                                    <span
+                                                        class="material-symbols-outlined !text-base">priority_high</span>
+                                                    Urgente
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-[#617789] dark:text-gray-400 mb-3"
+                                                x-text="comunicado.descricao"></p>
+                                            <div
+                                                class="flex items-center gap-4 text-sm text-[#617789] dark:text-gray-400">
+                                                <span class="inline-flex items-center gap-1">
+                                                    <span class="material-symbols-outlined !text-base">label</span>
+                                                    <span x-text="comunicado.categoria"></span>
+                                                </span>
+                                                <span class="inline-flex items-center gap-1">
+                                                    <span
+                                                        class="material-symbols-outlined !text-base">calendar_today</span>
+                                                    <span x-text="formatarData(comunicado.dataCriacao)"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <button @click="deletarComunicado(comunicado.id)"
+                                            class="p-2 text-red-600 hover:bg-red-50 rounded-lg dark:text-red-400 dark:hover:bg-red-900/20">
+                                            <span class="material-symbols-outlined">delete</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Modal -->
+        <div x-show="showModal" @keydown.window.escape="showModal = false" class="fixed inset-0 z-50 overflow-y-auto"
+            style="display: none;">
+            <div class="flex min-h-screen items-center justify-center p-4">
+                <div @click="showModal = false" class="fixed inset-0 bg-black/50 transition-opacity"></div>
+                <div class="relative w-full max-w-2xl rounded-xl bg-white p-6 shadow-xl dark:bg-background-dark">
+                    <div class="mb-6 flex items-center justify-between">
+                        <h3 class="text-2xl font-bold text-[#111518] dark:text-white">Novo Comunicado</h3>
+                        <button @click="showModal = false"
+                            class="p-2 hover:bg-gray-100 rounded-lg dark:hover:bg-white/10">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="mb-2 block text-sm font-medium text-[#111518] dark:text-white">Título</label>
+                            <input x-model="novoComunicado.titulo" type="text"
+                                placeholder="Digite o título do comunicado"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[#111518] placeholder-[#617789] focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-gray-700 dark:bg-background-dark dark:text-white dark:placeholder-gray-500" />
+                        </div>
+
+                        <div>
+                            <label
+                                class="mb-2 block text-sm font-medium text-[#111518] dark:text-white">Descrição</label>
+                            <textarea x-model="novoComunicado.descricao" rows="4"
+                                placeholder="Digite a descrição do comunicado"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[#111518] placeholder-[#617789] focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-gray-700 dark:bg-background-dark dark:text-white dark:placeholder-gray-500"></textarea>
+                        </div>
+
+                        <div>
+                            <label
+                                class="mb-2 block text-sm font-medium text-[#111518] dark:text-white">Categoria</label>
+                            <select x-model="novoComunicado.categoria"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[#111518] focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 dark:border-gray-700 dark:bg-background-dark dark:text-white">
+                                <option>Informação</option>
+                                <option>Manutenção</option>
+                                <option>Evento</option>
+                                <option>Segurança</option>
+                                <option>Limpeza</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <input x-model="novoComunicado.urgente" type="checkbox" id="urgente"
+                                class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-700 dark:bg-background-dark" />
+                            <label for="urgente" class="text-sm font-medium text-[#111518] dark:text-white">Marcar como
+                                urgente</label>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-3">
+                        <button @click="showModal = false"
+                            class="flex h-12 flex-1 items-center justify-center rounded-lg border border-gray-300 bg-white px-5 text-base font-bold text-[#111518] hover:bg-gray-50 dark:border-gray-700 dark:bg-background-dark dark:text-white dark:hover:bg-white/5">
+                            Cancelar
+                        </button>
+                        <button @click="salvarComunicado"
+                            class="flex h-12 flex-1 items-center justify-center rounded-lg bg-primary px-5 text-base font-bold text-white hover:bg-primary/90">
+                            Publicar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dadosUsuario.js"></script>
+    <script src="comunicadosApp.js"></script>
+
+</body>
+
+</html>

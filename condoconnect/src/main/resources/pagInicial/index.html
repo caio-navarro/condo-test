@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#1F2937",
+                        "accent": "#10B981",
+                        "background-light": "#F9FAFB"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light font-display text-secondary">
+    <div class="flex min-h-screen flex-col">
+        <header class="sticky top-0 z-10 w-full bg-white/80 backdrop-blur-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                    <a class="flex items-center gap-3" href="#">
+                        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+                        <span class="text-xl font-bold text-secondary">Condo Connect</span>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-4">
+                        <a class="flex items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-primary text-white text-sm font-bold tracking-wide transition-colors hover:bg-primary/90"
+                            href="selecaoCadastro.html">
+                            <span>Cadastre-se</span>
+                        </a>
+                        <a class="flex items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-secondary text-white text-sm font-bold tracking-wide transition-colors hover:bg-secondary/90"
+                            href="login.html">
+                            <span>Login</span>
+                        </a>
+                    </nav>
+                    <button
+                        class="md:hidden flex items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide transition-colors hover:bg-primary/90">
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <section class="relative bg-cover bg-center bg-no-repeat"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBr_KUfL7Cw-0yEhD2lM4dQDGPfqBqfdx3_6Q5Q41CUawj0SS4VpE-wwhxbB1rOKaxywBHdEkcmOaqKNfji517Dd9hbNI2OqCGeCOd-eHcLUuYiRykm__QY1nJko4cD8fK_Yw52vrurev3ZhybmglaNbNt5PbO22cWi-hUMgEdAtUYUK_QCActWI1on8_Q2zgRflXHQ5DKw3Zg1gxrQNWAsK4g3xtkSiAQDYPN5PZab8_wC3sX7oS0YkptWjBI7nFLZ2TuTs5idTkVB');">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="relative">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="flex min-h-[70vh] flex-col items-center justify-center py-20 text-center text-white">
+                            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                                A gestão do seu condomínio, simplificada e conectada.
+                            </h1>
+                            <p class="mt-4 max-w-3xl text-lg text-gray-200 sm:text-xl">
+                                Simplifique a comunicação, finanças e reservas em um só lugar. Tenha o controle total na
+                                palma da sua mão.
+                            </p>
+
+                            <div class="mt-8 flex w-full flex-col items-center justify-center gap-4 md:hidden">
+                                <a class="flex w-full max-w-xs cursor-pointer items-center justify-center rounded-md h-12 px-6 bg-primary text-white text-base font-bold tracking-wide hover:bg-primary/90"
+                                    href="#">
+                                    <span class="truncate">Cadastrar Condomínio</span>
+                                </a>
+                                <a class="flex w-full max-w-xs cursor-pointer items-center justify-center rounded-md h-12 px-6 bg-gray-100 text-secondary text-base font-bold tracking-wide hover:bg-gray-200"
+                                    href="#">
+                                    <span class="truncate">Cadastrar Morador/Síndico</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+                            Descubra os Benefícios
+                        </h2>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                            Tudo que você precisa para uma gestão condominial eficiente e transparente.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
+                        <div
+                            class="flex flex-row items-start gap-4 rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-primary/50 sm:flex-col">
+                            <span class="material-symbols-outlined text-primary text-4xl">forum</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-secondary">Comunicação Centralizada</h3>
+                                <p class="text-sm text-gray-600">Anúncios, mensagens e notificações em um único lugar
+                                    para todos os moradores.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-row items-start gap-4 rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-primary/50 sm:flex-col">
+                            <span class="material-symbols-outlined text-primary text-4xl">payments</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-secondary">Gestão Financeira</h3>
+                                <p class="text-sm text-gray-600">Acompanhe pagamentos, taxas e gere relatórios
+                                    financeiros com transparência.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-row items-start gap-4 rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-primary/50 sm:flex-col">
+                            <span class="material-symbols-outlined text-primary text-4xl">event_available</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-secondary">Reservas de Espaços</h3>
+                                <p class="text-sm text-gray-600">Agende facilmente o uso de áreas comuns como salão de
+                                    festas e churrasqueira.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-row items-start gap-4 rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-primary/50 sm:flex-col">
+                            <span class="material-symbols-outlined text-primary text-4xl">folder_open</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-secondary">Hub de Documentos</h3>
+                                <p class="text-sm text-gray-600">Acesse atas de reunião, regulamentos e outros
+                                    documentos importantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-sm text-gray-500">© 2025 Condo Connect. Todos os direitos reservados.</p>
+                    <div class="flex items-center flex-wrap justify-center gap-x-6 gap-y-2">
+                        <a class="text-sm text-gray-500 hover:text-primary" href="#">Termos de Serviço</a>
+                        <a class="text-sm text-gray-500 hover:text-primary" href="#">Política de Privacidade</a>
+                        <a class="text-sm text-gray-500 hover:text-primary" href="#">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

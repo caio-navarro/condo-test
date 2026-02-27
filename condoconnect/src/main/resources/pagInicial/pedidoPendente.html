@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Aguardando Aprovação</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937",
+                        "text-light": "#111827",
+                        "text-dark": "#F9FAFB",
+                        "subtext-light": "#6B7280",
+                        "subtext-dark": "#9CA3AF"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div class="flex min-h-screen flex-col">
+        <header class="w-full">
+            <div class="container mx-auto flex items-center justify-between p-4 sm:p-6">
+                <a aria-label="Página inicial do Condo Connect" class="flex items-center gap-3" href="#">
+                </a>
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <button href="index.html"
+                        class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md px-4 text-sm font-bold ring-offset-background-light transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-background-dark dark:hover:bg-white/10">
+                        Sair
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <div class="container mx-auto flex h-full items-center justify-center p-4">
+                <div class="w-full max-w-md">
+                    <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-lg p-6 text-center sm:p-12">
+                        <div class="flex flex-col items-center gap-6">
+                            <div
+                                class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined !text-4xl">hourglass_top</span>
+                            </div>
+                            <div class="space-y-2">
+                                <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Registro Pendente</h2>
+                                <p class="text-subtext-light dark:text-subtext-dark">
+                                    Seu cadastro foi enviado com sucesso e está em análise. Você receberá uma
+                                    notificação por e-mail assim que sua conta for aprovada.
+                                </p>
+                            </div>
+                            <div class="pt-2 sm:pt-4">
+                                <p class="text-sm text-subtext-light dark:text-subtext-dark">
+                                    Precisa de ajuda? <a
+                                        class="font-medium text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary/50 rounded"
+                                        href="#">Fale com o suporte</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="w-full">
+            <div class="container mx-auto px-4 py-6">
+                <p class="text-center text-sm text-subtext-light dark:text-subtext-dark">
+                    © 2025 Condo Connect. Todos os direitos reservados.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

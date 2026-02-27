@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24 !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+        }
+    </style>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24 !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <script>
+        // Simple script for toggling mobile menu
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+    </script>
+</head>
+
+<body class="font-display">
+    <div
+        class="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+        <aside
+            class="fixed top-0 left-0 z-40 w-64 h-screen bg-white dark:bg-slate-900 p-4 flex flex-col justify-between border-r border-slate-200 dark:border-slate-800 lg:hidden transform -translate-x-full transition-transform duration-300 ease-in-out"
+            id="sidebar">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="Admin user avatar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCia8iPo1TVVAoQfYubn2l_-AafIBVrorazeVdzT63h0_rVyEd_-GkUSciYQly3b6gSzgonpAFduwC7iL0o3jHrSzwlhT2YZxJMkDTmSNSmPEYWq5j3Qf_B_ZsIaLvZVUvN7XqkH1cISAnXEyA-S0maSHcCIdTOzhEQWGhk3-W2ONhjxCH6p4fdpfzgELVXmcIlROAXQoyzDCTjUMQCRzH2akMz7d14DK_uJQbKlos5VCDyColbDcmyz7BsnugGh_VZasPA3Q-WiblX");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal">Admin
+                            </h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Condo
+                                Connect</p>
+                        </div>
+                    </div>
+                    <button class="p-2 -mr-2 text-slate-500 dark:text-slate-400" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-2 mt-4">
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20"
+                        href="#">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                        <p class="text-sm font-medium leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="aprovarSindicos.html">
+                        <span class="material-symbols-outlined">shield_person</span>
+                        <p class="text-sm font-medium leading-normal">Síndicos</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="#">
+                        <span class="material-symbols-outlined">report</span>
+                        <p class="text-sm font-medium leading-normal">Ocorrências</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="#">
+                        <span class="material-symbols-outlined">campaign</span>
+                        <p class="text-sm font-medium leading-normal">Comunicados</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="geradorCodigo.html">
+                        <span class="material-symbols-outlined">key</span>
+                        <p class="text-sm font-medium leading-normal">Códigos</p>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="assinatura.html">
+                        <span class="material-symbols-outlined">credit_card</span>
+                        <p class="text-sm font-medium leading-normal">Assinatura</p>
+                    </a>
+
+                </nav>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Sair</p>
+                </a>
+            </div>
+        </aside>
+        <div class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden" id="sidebar-overlay" onclick="toggleMobileMenu()">
+        </div>
+        <div class="flex flex-row min-h-screen w-full">
+            <aside
+                class="w-64 flex-col justify-between bg-white dark:bg-background-dark p-4 border-r border-slate-200 dark:border-slate-800 hidden lg:flex shrink-0">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="Admin user avatar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCia8iPo1TVVAoQfYubn2l_-AafIBVrorazeVdzT63h0_rVyEd_-GkUSciYQly3b6gSzgonpAFduwC7iL0o3jHrSzwlhT2YZxJMkDTmSNSmPEYWq5j3Qf_B_ZsIaLvZVUvN7XqkH1cISAnXEyA-S0maSHcCIdTOzhEQWGhk3-W2ONhjxCH6p4fdpfzgELVXmcIlROAXQoyzDCTjUMQCRzH2akMz7d14DK_uJQbKlos5VCDyColbDcmyz7BsnugGh_VZasPA3Q-WiblX");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal">Admin
+                            </h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Condo
+                                Connect</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20"
+                            href="#">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                            <p class="text-sm font-medium leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                            href="aprovarSindicos.html">
+                            <span class="material-symbols-outlined">shield_person</span>
+                            <p class="text-sm font-medium leading-normal">Síndicos</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                            href="ocorrencias.html">
+                            <span class="material-symbols-outlined">report</span>
+                            <p class="text-sm font-medium leading-normal">Ocorrências</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                            href="comunicados.html">
+                            <span class="material-symbols-outlined">campaign</span>
+                            <p class="text-sm font-medium leading-normal">Comunicados</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                            href="geradorCodigo.html">
+                            <span class="material-symbols-outlined">key</span>
+                            <p class="text-sm font-medium leading-normal">Códigos</p>
+                        </a>
+
+                        <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                            href="assinatura.html">
+                            <span class="material-symbols-outlined">credit_card</span>
+                            <p class="text-sm font-medium leading-normal">Assinatura</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px-3 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        href="#">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Sair</p>
+                    </a>
+                </div>
+            </aside>
+            <main class="flex-1 flex flex-col w-full">
+                <header
+                    class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 sm:px-6 lg:px-10 py-3 bg-white dark:bg-background-dark">
+                    <div class="flex items-center gap-4 text-slate-900 dark:text-slate-200">
+                        <button class="lg:hidden p-2 -ml-2 text-slate-700 dark:text-slate-300"
+                            onclick="toggleMobileMenu()">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                        <h2
+                            class="text-slate-900 dark:text-slate-200 text-lg font-bold leading-tight tracking-[-0.015em]">
+                            Dashboard Geral</h2>
+                    </div>
+                </header>
+                <div class="flex-1 p-4 sm:p-6 lg:p-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                        <div
+                            class="flex flex-col gap-2 rounded-xl p-4 sm:p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-center">
+                                <p
+                                    class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium leading-normal">
+                                    Síndicos Pendentes</p>
+                                <span class="material-symbols-outlined text-orange-500">pending_actions</span>
+                            </div>
+                            <p
+                                class="text-slate-900 dark:text-slate-100 tracking-light text-3xl font-bold leading-tight">
+                                3</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-xl p-4 sm:p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-center">
+                                <p
+                                    class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-medium leading-normal">
+                                    Ocorrências Abertas</p>
+                                <span class="material-symbols-outlined text-red-500">report</span>
+                            </div>
+                            <p
+                                class="text-slate-900 dark:text-slate-100 tracking-light text-3xl font-bold leading-tight">
+                                5</p>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-10 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div
+                            class="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 sm:px-6 pb-3 pt-5 gap-2">
+                            <h2
+                                class="text-slate-900 dark:text-slate-200 text-xl sm:text-[22px] font-bold leading-tight tracking-[-0.015em]">
+                                Comunicados Recentes</h2>
+                            <a class="text-primary text-sm font-medium hover:underline self-start sm:self-auto"
+                                href="#">Ver todos</a>
+                        </div>
+                        <div class="flex flex-col divide-y divide-slate-200 dark:divide-slate-800">
+                            <div
+                                class="flex items-center gap-4 px-4 sm:px-6 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                <div class="flex items-center gap-4 overflow-hidden">
+                                    <div
+                                        class="text-slate-700 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12">
+                                        <span class="material-symbols-outlined">construction</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center min-w-0">
+                                        <p
+                                            class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal truncate">
+                                            Manutenção do Elevador Social</p>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                                            A manutenção programada ocorrerá na próxima sexta-feira.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">2h
+                                        atrás</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 px-4 sm:px-6 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                <div class="flex items-center gap-4 overflow-hidden">
+                                    <div
+                                        class="text-slate-700 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12">
+                                        <span class="material-symbols-outlined">celebration</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center min-w-0">
+                                        <p
+                                            class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal truncate">
+                                            Festa Junina no Salão de Festas</p>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                                            Venha participar da nossa tradicional festa junina neste sábado!</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">1
+                                        dia atrás</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 px-4 sm:px-6 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                <div class="flex items-center gap-4 overflow-hidden">
+                                    <div
+                                        class="text-slate-700 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12">
+                                        <span class="material-symbols-outlined">pool</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center min-w-0">
+                                        <p
+                                            class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal truncate">
+                                            Limpeza da Piscina</p>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                                            A piscina estará fechada para limpeza na segunda-feira pela manhã.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">3
+                                        dias atrás</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 px-4 sm:px-6 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                <div class="flex items-center gap-4 overflow-hidden">
+                                    <div
+                                        class="text-slate-700 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12">
+                                        <span class="material-symbols-outlined">group_add</span>
+                                    </div>
+                                    <div class="flex flex-col justify-center min-w-0">
+                                        <p
+                                            class="text-slate-900 dark:text-slate-200 text-base font-medium leading-normal truncate">
+                                            Assembleia Geral Ordinária</p>
+                                        <p
+                                            class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                                            Convocamos todos os moradores para a assembleia no dia 30.</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">5
+                                        dias atrás</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

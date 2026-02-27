@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Aprovações</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#138aec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fade-in { animation: fadeIn 0.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111518] dark:text-gray-200">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+        <div class="flex flex-1" x-data="{ open: false }">
+            
+            <div @keydown.window.escape="open = false" class="lg:hidden" x-show="open">
+                <aside :class="open ? 'translate-x-0' : '-translate-x-full'"
+                    class="fixed inset-y-0 left-0 z-50 flex w-64 transform flex-col border-r border-gray-200 bg-white p-4 transition-transform duration-300 ease-in-out dark:border-gray-800 dark:bg-background-dark">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-3xl text-primary">apartment</span>
+                            <div class="flex flex-col">
+                                <h1 class="text-base font-bold leading-normal text-[#111518] dark:text-white">Condo Connect</h1>
+                            </div>
+                        </div>
+                        <button @click="open = false" class="p-2">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 border-b border-gray-100 pb-4 mb-4 dark:border-gray-700">
+                        <h1 id="nome-usuario-mobile" class="text-base font-bold text-[#111518] dark:text-white">Carregando...</h1>
+                        <p id="nome-condominio-mobile" class="text-sm text-[#617789] dark:text-gray-400">Carregando...</p>
+                    </div>
+
+                    <nav class="flex flex-1 flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="dashboard.html">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-medium">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+                            <p class="text-sm font-medium">Moradores</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="ocorrencias.html">
+                            <span class="material-symbols-outlined">warning</span>
+                            <p class="text-sm font-medium">Ocorrências</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="criarComunicado.html">
+                            <span class="material-symbols-outlined">campaign</span>
+                            <p class="text-sm font-medium">Comunicados</p>
+                        </a>
+                    </nav>
+                </aside>
+                <div @click="open = false" class="fixed inset-0 z-40 bg-black/30 lg:hidden" x-show="open"></div>
+            </div>
+
+            <aside class="sticky top-0 hidden h-screen w-64 flex-col border-r border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-background-dark lg:flex">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-primary">apartment</span>
+                    <h1 class="text-lg font-bold">Condo Connect</h1>
+                </div>
+                
+                <div class="mb-6 rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
+                    <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                            <h1 id="nome-usuario-sidebar" class="text-sm font-bold leading-normal text-[#111518] dark:text-white">Carregando...</h1>
+                            <p id="nome-condominio-sidebar" class="text-xs font-normal leading-normal text-[#617789] dark:text-gray-400">Carregando...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="flex flex-1 flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="dashboard.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <p class="text-sm font-medium">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+                        <p class="text-sm font-medium">Moradores</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="ocorrencias.html">
+                        <span class="material-symbols-outlined">warning</span>
+                        <p class="text-sm font-medium">Ocorrências</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="criarComunicado.html">
+                        <span class="material-symbols-outlined">campaign</span>
+                        <p class="text-sm font-medium">Comunicados</p>
+                    </a>
+                </nav>
+                <div class="mt-auto flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-[#111518] hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10" href="../pagInicial/login.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium">Sair</p>
+                    </a>
+                </div>
+            </aside>
+
+            <main class="flex flex-1 flex-col">
+                <header class="sticky top-0 z-30 flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-background-dark sm:px-6 lg:px-10">
+                    <div class="flex items-center gap-4 text-[#111518] dark:text-white">
+                        <button @click="open = !open" class="-ml-2 p-2 lg:hidden">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                        <h2 class="text-lg font-bold">Aprovação de Moradores</h2>
+                    </div>
+                </header>
+
+                <div class="flex-1 p-4 sm:p-6 lg:p-10">
+                    <div class="mx-auto max-w-7xl">
+                        <div class="mb-8">
+                            <h1 class="text-3xl font-black text-[#111518] dark:text-white md:text-4xl">Solicitações Pendentes</h1>
+                            <p class="mt-1 text-base text-[#617789] dark:text-gray-400">Gerencie o acesso de novos moradores ao condomínio.</p>
+                        </div>
+
+                        <div class="hidden lg:block overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-background-dark/50">
+                            <table class="w-full">
+                                <thead class="bg-gray-50 dark:bg-gray-800/50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#617789] dark:text-gray-400">Morador</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#617789] dark:text-gray-400">CPF</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[#617789] dark:text-gray-400">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+                                    </tbody>
+                            </table>
+                        </div>
+
+                        <div class="grid gap-4 lg:hidden" id="mobile-list">
+                            </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="fixed inset-0 z-50 items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="confirm-backdrop"></div>
+        <div class="relative mx-4 w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl fade-in dark:bg-gray-800">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-3xl text-blue-600">help</span>
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Confirmação</h3>
+            </div>
+            <p id="confirm-message" class="text-slate-600 dark:text-gray-300 mb-6">Tem certeza que deseja realizar esta ação?</p>
+            <div class="flex gap-3">
+                <button id="btn-cancel" class="flex-1 rounded-lg border border-gray-300 py-2.5 font-bold text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+                    Cancelar
+                </button>
+                <button id="btn-confirm" class="flex-1 rounded-lg bg-primary py-2.5 font-bold text-white hover:bg-blue-600 shadow-sm">
+                    Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="erro-modal" class="fixed inset-0 z-50 items-center justify-center hidden">
+        <div class="absolute inset-0 bg-black/50" id="erro-modal-backdrop"></div>
+        <div class="relative mx-4 w-full max-w-md rounded-xl bg-white p-6 shadow-2xl fade-in dark:bg-gray-800">
+            <div class="flex items-center gap-3 mb-4">
+                <span id="modal-icon" class="material-symbols-outlined text-3xl text-red-600">error_outline</span>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-800 dark:text-white">Atenção</h3>
+            </div>
+            <ul id="erro-list" class="space-y-2 text-sm text-slate-700 dark:text-gray-300 list-disc list-inside max-h-64 overflow-y-auto"></ul>
+            <button id="erro-modal-close" class="mt-6 w-full rounded-lg bg-primary py-3 font-bold text-white hover:bg-blue-600">
+                Entendi
+            </button>
+        </div>
+    </div>
+
+    <script src="aprovarMoradores.js"></script>
+    <script src="dadosUsuario.js"></script>
+</body>
+</html>

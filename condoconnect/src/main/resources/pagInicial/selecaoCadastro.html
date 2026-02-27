@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Condo Connect - Seleção</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        secondary: "#1F2937",
+                        accent: "#10B981",
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-display text-secondary">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <a class="flex items-center gap-3" href="#">
+                    <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+                    <span class="text-xl font-bold">Condo Connect</span>
+                </a>
+                <a href="index.html"
+                    class="hidden md:flex items-center justify-center rounded-md h-10 px-6 bg-secondary text-white text-sm font-bold hover:bg-secondary/90">
+                    Voltar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO / CABEÇALHO -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+
+            <h1 class="text-4xl font-extrabold tracking-tight text-secondary">
+                Como você deseja se cadastrar?
+            </h1>
+
+            <p class="mt-4 text-lg text-gray-600">
+                Selecione abaixo o tipo de cadastro para continuar com a criação da conta.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- CARDS DE SELEÇÃO -->
+    <section class="pb-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CONDOMÍNIO -->
+                <a href="../condominio/cadastro.html"
+                    class="group rounded-xl border border-gray-200 bg-white p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+
+                    <span class="material-symbols-outlined text-primary text-6xl mb-4 group-hover:scale-110 transition">
+                        apartment
+                    </span>
+
+                    <h3 class="text-xl font-bold text-secondary mb-2">Condomínio</h3>
+
+                    <p class="text-gray-600 text-sm">
+                        Cadastre um condomínio completo para gestão, moradores e síndicos.
+                    </p>
+                </a>
+
+                <!-- SÍNDICO -->
+                <a href="../sindico/cadastro.html"
+                    class="group rounded-xl border border-gray-200 bg-white p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+
+                    <span class="material-symbols-outlined text-primary text-6xl mb-4 group-hover:scale-110 transition">
+                        badge
+                    </span>
+
+                    <h3 class="text-xl font-bold text-secondary mb-2">Síndico</h3>
+
+                    <p class="text-gray-600 text-sm">
+                        Gerencie o condomínio, administre ocorrências e acompanhe tudo em tempo real.
+                    </p>
+                </a>
+
+                <!-- MORADOR -->
+                <a href="../morador/cadastro.html"
+                    class="group rounded-xl border border-gray-200 bg-white p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+
+                    <span class="material-symbols-outlined text-primary text-6xl mb-4 group-hover:scale-110 transition">
+                        home
+                    </span>
+
+                    <h3 class="text-xl font-bold text-secondary mb-2">Morador</h3>
+
+                    <p class="text-gray-600 text-sm">
+                        Acompanhe comunicados, reservas, pagamentos e tudo sobre o seu condomínio.
+                    </p>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
+            © 2025 Condo Connect. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
