@@ -1,5 +1,0 @@
-[build]
-builder = "NIXPACKS"
-
-[deploy]
-startCommand = "java -jar target/condoconnect-0.0.1-SNAPSHOT.jar"
