@@ -13,7 +13,7 @@ async function carregarSindicosPendentes() {
     lista.innerHTML = "<p class='text-sm text-gray-500'>Carregando...</p>";
 
     try {
-        const response = await fetch("http://localhost:8080/sindico/pendentes");
+        const response = await fetch("/api/sindico/pendentes");
 
         if (!response.ok) {
             throw new Error("Erro ao buscar síndicos pendentes");
@@ -92,7 +92,7 @@ async function recusarSindico(id) {
 
 async function atualizarStatus(id, status) {
     try {
-        const response = await fetch(`http://localhost:8080/sindico/${id}/status`, {
+        const response = await fetch(`/api/sindico/${id}/status`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ status })

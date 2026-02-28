@@ -36,7 +36,7 @@ async function gerarNovoCodigo() {
             <span>Gerando...</span>
         `;
 
-        const response = await fetch(`${API_BASE_URL}/condominio/${condominioId}/gerar-codigo`, {
+        const response = await fetch(`/api/condominio/${condominioId}/gerar-codigo`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ async function gerarNovoCodigo() {
             <span>Gerar Novo Código</span>
         `;
     }
-}
+}/
 
 async function copiarCodigo() {
     const codigo = codigoDisplay.textContent;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/espaco-comum")
+@RequestMapping("/api/espaco-comum")
 public class EspacoComumController {
 
     @Autowired
