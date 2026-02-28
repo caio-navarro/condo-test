@@ -89,7 +89,7 @@ async function atualizarEndereco(event) {
     try {
         const dados = { rua, numero };
 
-        const response = await fetch(`http://localhost:8080/morador/${moradorId}`, {
+        const response = await fetch(`/api/morador/${moradorId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)

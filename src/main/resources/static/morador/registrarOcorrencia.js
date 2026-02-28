@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnCancelar = document.querySelector('button[type="button"]');
 
     // Configuração da API
-    const API_BASE_URL = 'http://localhost:8080';
+    const API_BASE_URL = '/api';
 
     // Verificar se usuário está logado
     const idMorador = localStorage.getItem('id');

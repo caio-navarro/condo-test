@@ -123,7 +123,7 @@ document.getElementById("registro-form").addEventListener("submit", async functi
     btnSubmit.innerText = "Registrando...";
 
     try {
-        const response = await fetch("http://localhost:8080/morador", {
+        const response = await fetch("/api/morador", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(cadastroData)

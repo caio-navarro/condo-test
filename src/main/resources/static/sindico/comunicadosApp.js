@@ -31,7 +31,7 @@ document.addEventListener("alpine:init", () => {
                 const { idCondominio } = this.getUsuarioLogado();
 
                 const response = await fetch(
-                    `http://localhost:8080/aviso/condominio/${idCondominio}`
+                    `/api/aviso/condominio/${idCondominio}`
                 );
 
                 if (!response.ok) {
@@ -66,7 +66,7 @@ document.addEventListener("alpine:init", () => {
                     dataCriacao: new Date().toISOString().split("T")[0]
                 };
 
-                const response = await fetch("http://localhost:8080/aviso", {
+                const response = await fetch("/api/aviso", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
@@ -91,7 +91,7 @@ document.addEventListener("alpine:init", () => {
 
             try {
                 const response = await fetch(
-                    `http://localhost:8080/aviso/${id}`,
+                    `/api/aviso/${id}`,
                     { method: "DELETE" }
                 );
 

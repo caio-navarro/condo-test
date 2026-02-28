@@ -1,6 +1,6 @@
 // listarOcorrencias.js
 document.addEventListener('DOMContentLoaded', function () {
-    const API_BASE_URL = 'http://localhost:8080';
+    const API_BASE_URL = '/api';
     const containerOcorrencias = document.querySelector('.grid');
     const btnCarregarMais = document.querySelector('button');
 

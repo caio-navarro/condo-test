@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 return;
             }
 
-            const response = await fetch(`http://localhost:8080/aviso/condominio/${idCondominio}`);
+            const response = await fetch(`/api/aviso/condominio/${idCondominio}`);
 
             if (!response.ok) {
                 throw new Error("Erro ao buscar comunicados");
