@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sindico")
-@CrossOrigin(origins = "*")
 public class SindicoController {
 
     @Autowired
