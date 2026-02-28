@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080'; // Substitua pela URL da sua API
+const API_BASE_URL = '/api'; // Substitua pela URL da sua API
 
 const codigoDisplay = document.querySelector('.font-mono');
 const btnGerarNovo = document.querySelector('.bg-primary');
